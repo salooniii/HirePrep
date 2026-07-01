@@ -1,0 +1,1 @@
+HirePrep is an AI-powered career preparation platform designed to help students and job seekers improve their chances of getting hired. The platform analyzes resumes, calculates ATS scores, identifies missing skills based on the selected job role, recommends improvements, and provides interview preparation resources.
