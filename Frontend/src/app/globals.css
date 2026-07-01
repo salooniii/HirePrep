@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* ── DARK THEME (default) ──────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-primary:    #0a0a0a;
+  --bg-secondary:  #1a1814;
+  --bg-tertiary:   #1c1b16;
+  --bg-warm:       #2a2318;
+
+  /* Accents */
+  --accent-red:        #c94a3a;
+  --accent-orange:     #e8823a;
+  --accent-brown:      #7a2e18;
+  --accent-dark-brown: #4a1a0e;
+
+  /* Semantic */
+  --success:      #2ecc71;
+  --success-dark: #1a3d2a;
+  --warning:      #f5820a;
+  --error:        #2a0e08;
+
+  /* Text */
+  --text-cream: #f5f0e8;
+  --text-muted: #a89880;
+  --text-brown: #7a6a58;
+  --text-white: #ffffff;
+
+  /* Functional */
+  --border:       rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --nav-bg:       rgba(10, 10, 10, 0.85);
+
+  /* Dot grid */
+  --dot-color: #2a2a2a;
+}
+
+/* ── LIGHT THEME ───────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-primary:   #faf7f2;
+  --bg-secondary: #ffffff;
+  --bg-tertiary:  #f0ebe2;
+  --bg-warm:      #ede5d8;
+
+  /* Accents — keep brand colours identical */
+  --accent-red:        #c94a3a;
+  --accent-orange:     #d4702a;
+  --accent-brown:      #7a2e18;
+  --accent-dark-brown: #5a1e0e;
+
+  /* Semantic */
+  --success:      #1a9e52;
+  --success-dark: #d4f0e2;
+  --warning:      #c96a00;
+  --error:        #fde8e8;
+
+  /* Text */
+  --text-cream: #1a0f08;
+  --text-muted: #6b5a4e;
+  --text-brown: #8a7060;
+  --text-white: #000000;
+
+  /* Functional */
+  --border:       rgba(0, 0, 0, 0.10);
+  --border-hover: rgba(0, 0, 0, 0.20);
+  --nav-bg:       rgba(250, 247, 242, 0.88);
+
+  /* Dot grid */
+  --dot-color: #d4c4b4;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto !important;
+  /* Smooth theme transition on all properties that use CSS vars */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-cream);
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Make every element transition smoothly on theme switch */
+*, *::before, *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.font-sans { font-family: var(--font-sans); }
+.font-mono { font-family: var(--font-mono); }
+
+@keyframes spotlight {
+  0%   { opacity: 0; transform: translate(-72%, -62%) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%, -40%) scale(1); }
+}
+
+.in-view .animate-spotlight {
+  animation: spotlight 2s ease 0.3s forwards;
+}
